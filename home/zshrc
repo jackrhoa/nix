@@ -4,40 +4,34 @@ PROMPT='%m %~ %# '
 #   exec tmux
 # fi
 
-export PATH="/Library/Frameworks/Python.framework/Versions/3.13/bin:$PATH"
-. "$HOME/.local/bin/env"
-
-# alias for creating virtual environment
-alias vvenv='python3 -m venv .venv && source .venv/bin/activate'
+# USE nix python
+# export PATH="/Library/Frameworks/Python.framework/Versions/3.13/bin:$PATH"
+# . "$HOME/.local/bin/env"
 
 # never use vim
-alias vim='ECHO "no. Use nvim"'
+# alias vim='ECHO "no. Use nvim"'
 
 # alias for encrypting files using age and Yubikey 1
 # takes 1 arg: file to encrypt
 # output: file.age (encrypted version)
-alias yke='$HOME/LocalDocuments/scripts/age-plugin-yk-encrypt.sh'
+# alias yke='$HOME/LocalDocuments/scripts/age-plugin-yk-encrypt.sh'
 
 # alias for decrypting files using age and Yubikey 1
 # takes 2 arg: file to decrypt and decrypted output file
 # outputs decrupted output file 
-alias ykd='$HOME/LocalDocuments/scripts/age-plugin-yk-decrypt.sh'
+# alias ykd='$HOME/LocalDocuments/scripts/age-plugin-yk-decrypt.sh'
 
-alias whatismyip='curl ipinfo.io'
-
-export PATH="/Applications/CMake.app/Contents/bin":"$PATH"
+# alias whatismyip='curl ipinfo.io'
 
 export JAVA_HOME=$(/usr/libexec/java_home -v 21)
 
 export PATH=$(brew --prefix openssh)/bin:$PATH
 
-export PATH=/usr/local/share/google-cloud-sdk/bin:"$PATH"
-
 alias claude-sr='CLAUDE_CONFIG_DIR=~/.claude-sports-reference claude'
 
 alias claude-personal='CLAUDE_CONFIG_DIR=$HOME/.claude claude'
 
-alias ls='ls --color=auto'
+# alias ls='ls --color=auto'
 
 setopt PROMPT_SUBST
 zmodload zsh/datetime
