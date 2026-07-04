@@ -16,14 +16,14 @@
   outputs = { self, nix-darwin, nixpkgs, home-manager }: {
     darwinConfigurations."M3-MacBook-Pro1" = nix-darwin.lib.darwinSystem {
       modules = [
-        ./hosts/m3-macbook-pro
+        ./hosts/macbook
 	home-manager.darwinModules.home-manager
 	{
           home-manager.useGlobalPkgs = true;
 	  home-manager.useUserPackages = true;
 	  home-manager.backupFileExtension = "hm-bak";
 	  home-manager.users.jackrhoa.imports = [
-  	    ./home/common.nix
+  	  ./home/common.nix
 	    ./home/m3-macbook-pro.nix
 	  ];
 	  # home-manager.users.jackrhoa = { pkgs, ... }: {
