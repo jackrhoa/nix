@@ -22,4 +22,12 @@
     # output: file.age (encrypted version)
     yke = "$HOME/LocalDocuments/scripts/age-plugin-yk-encrypt.sh";
   };
+  
+  # home.sessionVariables = {
+  #
+  # };
+  #
+  # home.sessionPath = {
+  #
+  # };
 }
