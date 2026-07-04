@@ -19,12 +19,13 @@
         ./hosts/macbook
 	home-manager.darwinModules.home-manager
 	{
-          home-manager.useGlobalPkgs = true;
+    home-manager.useGlobalPkgs = true;
 	  home-manager.useUserPackages = true;
 	  home-manager.backupFileExtension = "hm-bak";
 	  home-manager.users.jackrhoa.imports = [
   	  ./home/common.nix
-	    ./home/m3-macbook-pro.nix
+	    ./home/macbook.nix
+      ./home/starship.nix
 	  ];
 	  # home-manager.users.jackrhoa = { pkgs, ... }: {
 	    # home.stateVersion = "26.05";
