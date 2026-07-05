@@ -1,28 +1,3 @@
-# PROMPT='%m %~ %# '
-
-# if [ -z "$TMUX" ]; then
-#   exec tmux
-# fi
-
-# USE nix python
-# export PATH="/Library/Frameworks/Python.framework/Versions/3.13/bin:$PATH"
-# . "$HOME/.local/bin/env"
-
-# never use vim
-# alias vim='ECHO "no. Use nvim"'
-
-# alias for encrypting files using age and Yubikey 1
-# takes 1 arg: file to encrypt
-# output: file.age (encrypted version)
-# alias yke='$HOME/LocalDocuments/scripts/age-plugin-yk-encrypt.sh'
-
-# alias for decrypting files using age and Yubikey 1
-# takes 2 arg: file to decrypt and decrypted output file
-# outputs decrupted output file 
-# alias ykd='$HOME/LocalDocuments/scripts/age-plugin-yk-decrypt.sh'
-
-# alias whatismyip='curl ipinfo.io'
-
 export JAVA_HOME=$(/usr/libexec/java_home -v 21)
 
 export PATH=$(brew --prefix openssh)/bin:$PATH
@@ -33,7 +8,6 @@ alias claude-personal='CLAUDE_CONFIG_DIR=$HOME/.claude claude'
 
 # alias ls='ls --color=auto'
 
-setopt PROMPT_SUBST
 zmodload zsh/datetime
 
 export AWS_VAULT_PROMPT=ykman
@@ -94,5 +68,3 @@ _aws_profile_prompt() {
   print -rn "%F{blue}[aws:${AWS_PROFILE} %F{$color}$((left/60))m%f%F{blue}]%f "
 }
 
-: ${_AWS_PROMPT_BASE:=$PROMPT}
-PROMPT='$(_aws_profile_prompt)'"$_AWS_PROMPT_BASE"

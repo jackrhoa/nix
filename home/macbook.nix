@@ -9,7 +9,7 @@
     initContent = builtins.readFile ./zshrc;
   };
   programs.zsh.shellAliases = {
-    tailscale = "/Applications/Tailscale.app/Contents/MacOS/Tailscale";
+    # tailscale = "/Applications/Tailscale.app/Contents/MacOS/Tailscale";
     vim = "ECHO 'no. use NVIM'";
     
     # alias for decrypting files using age and Yubikey 1

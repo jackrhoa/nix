@@ -10,5 +10,4 @@
     ./packages.nix
     ./starship.nix
   ];
-  programs.zsh.initContent = "PROMPT='%m %~ %# ";
 }
