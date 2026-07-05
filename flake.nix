@@ -24,7 +24,6 @@
 	  home-manager.backupFileExtension = "hm-bak";
 	  home-manager.users.jackrhoa.imports = [
       ./home # auto imorts default.nix
-  	  ./home/common.nix
 	    ./home/macbook.nix
 	  ];
 	}
