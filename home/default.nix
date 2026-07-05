@@ -4,7 +4,7 @@
     ./zsh.nix
     ./fzf.nix
     ./neovim.nix
-    # ./git.nix
+    ./git.nix
     ./tmux.nix
     ./bash.nix
     ./packages.nix
