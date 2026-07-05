@@ -23,21 +23,10 @@
 	  home-manager.useUserPackages = true;
 	  home-manager.backupFileExtension = "hm-bak";
 	  home-manager.users.jackrhoa.imports = [
+      ./home # auto imorts default.nix
   	  ./home/common.nix
 	    ./home/macbook.nix
-      ./home/starship.nix
 	  ];
-	  # home-manager.users.jackrhoa = { pkgs, ... }: {
-	    # home.stateVersion = "26.05";
-	    # home.packages = [
-	    #   pkgs.ghostty-bin
-	    # ];
-	    # programs.zsh = {
-	    #   enable = true;
-	    #   initContent = builtins.readFile ./zshrc;
-	    # };
-	    # more programs / dot files here? Or not
-          # };
 	}
       ];
     };

@@ -1,5 +1,5 @@
-{ pkgs, ... }: {
-
+{ pkgs, config, ... }: {
+  # imports = [ ./starship.nix ];
   home.stateVersion = "26.05";
   home.packages = [
     pkgs.ghostty-bin
@@ -22,12 +22,15 @@
     # output: file.age (encrypted version)
     yke = "$HOME/LocalDocuments/scripts/age-plugin-yk-encrypt.sh";
   };
-  
+  home.sessionPath = [
+    "${config.home.homeDirectory}/.local/bin"
+  ];
+  # home.sessionPath = {
+  #
+  # };
   # home.sessionVariables = {
   #
   # };
   #
-  # home.sessionPath = {
-  #
-  # };
+
 }
