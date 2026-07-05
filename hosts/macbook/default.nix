@@ -1,7 +1,5 @@
 { pkgs, ... }: {
-  environment.systemPackages = [
-    pkgs.nil
-  ];
+  # environment.systemPackages = [];
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nixpkgs.hostPlatform = "aarch64-darwin";
   system.stateVersion = 6;

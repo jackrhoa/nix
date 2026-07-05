@@ -1,0 +1,26 @@
+-- vim.lsp.config['nil_ls'] = {
+--   cmd = { 'nil' },
+--   filetypes = { 'nix' },
+--   root_markers = { 'flake.nix', '.git' },
+-- }
+
+vim.lsp.enable('nil_ls')
+
+vim.api.nvim_create_autocmd('LspAttach', {
+  callback = function(args)
+    local client = assert(vim.lsp.get_client_by_id(args.data.client_id))
+    if client:supports_method('textDocument/completion') then
+      vim.lsp.completion.enable(true, client.id, args.buf, { autotrigger = true })
+    end
+  end,
+})
+
+vim.diagnostic.config({ virtual_text = true })
+vim.o.completeopt = 'noselect,menu,menuone,fuzzy,popup'
+vim.keymap.set('i', '<C-Space>', vim.lsp.completion.get)
+vim.keymap.set('i', '<C-@>', vim.lsp.completion.get)
+
+vim.opt.tabstop = 2
+vim.opt.shiftwidth = 2
+vim.opt.softtabstop = 2
+vim.opt.expandtab = true

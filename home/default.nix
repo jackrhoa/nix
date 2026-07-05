@@ -3,7 +3,7 @@
   imports = [
     ./zsh.nix
     ./fzf.nix
-    # ./neovim.nix
+    ./neovim.nix
     # ./git.nix
     ./tmux.nix
     ./bash.nix
