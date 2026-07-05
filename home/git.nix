@@ -1,7 +1,16 @@
 { config, ... }: {
   programs.git = {
     enable = true;
+    # Git Large File Storage
     lfs.enable = true;
+    signing = {
+      key = "${config.home.homeDirectory}/.ssh/git_key";
+      format = "ssh";
+      signByDefault = true;
+    };
+    ignores = [
+      ".DS_Store"
+    ];
     settings = {
       user = {
         name = "Jack Rhoa";
@@ -20,11 +29,12 @@
       };
       gpg.ssh.allowedSignersFile = "${config.home.homeDirectory}/.ssh/allowed_signers";
       push.autosetupremote = true;
-    };
-      signing = {
-        key = "${config.home.homeDirectory}/.ssh/git_key";
-        format = "ssh";
-        signByDefault = true;
-      };
+      pull.rebase = true;
+      pull.autoStash = true;
+      fetch.prune = true;
+      merge.conflictstyle = "zdiff3";
+      diff.algorithm = "histogram";
+      commit.verbose = true;
+    };    
   };
 }
