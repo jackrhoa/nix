@@ -1,9 +1,4 @@
--- vim.lsp.config['nil_ls'] = {
---   cmd = { 'nil' },
---   filetypes = { 'nix' },
---   root_markers = { 'flake.nix', '.git' },
--- }
-
+-- nix LSP
 vim.lsp.enable('nil_ls')
 vim.lsp.enable('lua_ls')
 
