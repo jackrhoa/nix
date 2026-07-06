@@ -5,6 +5,7 @@
 -- }
 
 vim.lsp.enable('nil_ls')
+vim.lsp.enable('lua_ls')
 
 vim.api.nvim_create_autocmd('LspAttach', {
   callback = function(args)
