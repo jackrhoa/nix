@@ -25,6 +25,7 @@
     yke = "$HOME/LocalDocuments/scripts/age-plugin-yk-encrypt.sh";
   };
   home.sessionPath = [
+    "/etc/profiles/per-user/${config.home.username}/bin"
     "${config.home.homeDirectory}/.local/bin"
   ];
   # home.sessionPath = {

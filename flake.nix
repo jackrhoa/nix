@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
+    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     nix-darwin = {
       url = "github:nix-darwin/nix-darwin/nix-darwin-26.05";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -13,7 +14,7 @@
     };
   };
 
-  outputs = { self, nix-darwin, nixpkgs, home-manager }:
+  outputs = { self, nixpkgs, nixpkgs-unstable, nix-darwin, home-manager }:
     let
       hmConfig = user: hostModule: {
         home-manager.useGlobalPkgs = true;
@@ -24,6 +25,19 @@
           hostModule
         ];
       };
+      unstableOverlay = {
+        nixpkgs.overlays = [
+          (final: prev: {
+            unstable = import nixpkgs-unstable {
+              inherit (prev) system;
+              # config.allowUnfree = prev.config.allowUnfree;
+              config.allowUnfree = true;
+            };
+
+          })
+        ];
+      };
+
     in
     {
       darwinConfigurations."M3-MacBook-Pro1" = nix-darwin.lib.darwinSystem {
@@ -31,6 +45,7 @@
           ./hosts/macbook
           home-manager.darwinModules.home-manager
           (hmConfig "jackrhoa" ./home/macbook.nix)
+          unstableOverlay
         ];
       };
 
@@ -39,6 +54,7 @@
           ./hosts/desktop
           home-manager.nixosModules.home-manager
           (hmConfig "jack" ./home/desktop.nix)
+          unstableOverlay
         ];
       };
     };
