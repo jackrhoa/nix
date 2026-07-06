@@ -2,7 +2,7 @@
   imports = [
     ./tmux.nix
   ];
-  home.stateVersion = "26.05";
+
   home.packages = [
     pkgs.ghostty-bin
   ];

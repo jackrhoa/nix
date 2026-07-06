@@ -12,6 +12,6 @@
   programs.zsh.shellAliases.nrs = 
     if pkgs.stdenv.isDarwin
     then "sudo darwin-rebuild switch"
-    else "sudo nixos-rebuild switch";
+    else "sudo nixos-rebuild switch --flake ~/.config/nix#desktop";
 }
 

@@ -15,12 +15,12 @@
 
   outputs = { self, nix-darwin, nixpkgs, home-manager }:
     let
-      hmConfig = hostModule: {
+      hmConfig = user: hostModule: {
         home-manager.useGlobalPkgs = true;
         home-manager.useUserPackages = true;
         home-manager.backupFileExtension = "hm-bak";
-        home-manager.users.jackrhoa.imports = [
-          ./home # auto imports default.nix
+        home-manager.users.${user}.imports = [
+          ./home
           hostModule
         ];
       };
@@ -30,7 +30,7 @@
         modules = [
           ./hosts/macbook
           home-manager.darwinModules.home-manager
-          (hmConfig ./home/macbook.nix)
+          (hmConfig "jackrhoa" ./home/macbook.nix)
         ];
       };
 
@@ -38,7 +38,7 @@
         modules = [
           ./hosts/desktop
           home-manager.nixosModules.home-manager
-          (hmConfig ./home/desktop.nix)
+          (hmConfig "jack" ./home/desktop.nix)
         ];
       };
     };
