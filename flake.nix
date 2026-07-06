@@ -13,21 +13,33 @@
     };
   };
 
-  outputs = { self, nix-darwin, nixpkgs, home-manager }: {
-    darwinConfigurations."M3-MacBook-Pro1" = nix-darwin.lib.darwinSystem {
-      modules = [
-        ./hosts/macbook
-	      home-manager.darwinModules.home-manager
-	{
-    home-manager.useGlobalPkgs = true;
-	  home-manager.useUserPackages = true;
-	  home-manager.backupFileExtension = "hm-bak";
-	  home-manager.users.jackrhoa.imports = [
-      ./home # auto imorts default.nix
-	    ./home/macbook.nix
-	  ];
-	}
-      ];
+  outputs = { self, nix-darwin, nixpkgs, home-manager }:
+    let
+      hmConfig = hostModule: {
+        home-manager.useGlobalPkgs = true;
+        home-manager.useUserPackages = true;
+        home-manager.backupFileExtension = "hm-bak";
+        home-manager.users.jackrhoa.imports = [
+          ./home # auto imports default.nix
+          hostModule
+        ];
+      };
+    in
+    {
+      darwinConfigurations."M3-MacBook-Pro1" = nix-darwin.lib.darwinSystem {
+        modules = [
+          ./hosts/macbook
+          home-manager.darwinModules.home-manager
+          (hmConfig ./home/macbook.nix)
+        ];
+      };
+
+      nixosConfigurations."desktop" = nixpkgs.lib.nixosSystem {
+        modules = [
+          ./hosts/desktop
+          home-manager.nixosModules.home-manager
+          (hmConfig ./home/desktop.nix)
+        ];
+      };
     };
-  };
 }
