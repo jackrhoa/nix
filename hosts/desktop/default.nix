@@ -37,8 +37,11 @@
   users.users.jack = {
     isNormalUser = true;
     description = "Jack";
+    shell = pkgs.zsh;
     extraGroups = [ "networkmanager" "wheel" ];
   };
+  
+  programs.zsh.enable = true;
 
   programs.firefox.enable = true;
   nixpkgs.config.allowUnfree = true;
