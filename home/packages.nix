@@ -2,6 +2,7 @@
 {
   home.packages = with pkgs; [
     ripgrep
+    fd
     age
     age-plugin-yubikey
     python312
