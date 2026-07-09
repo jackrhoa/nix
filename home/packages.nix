@@ -6,7 +6,9 @@
     age
     age-plugin-yubikey
     python312
+    jj
   ] ++ [
     pkgs.unstable.claude-code
+    pkgs.unstable.ffmpeg
   ];
 }
