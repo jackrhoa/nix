@@ -8,7 +8,7 @@
   ];
   programs.zsh = {
     enable = true;
-    initContent = builtins.readFile ./zshrc;
+    initContent = builtins.readFile ./zshrc + builtins.readFile ./awslogin;
   };
   programs.zsh.shellAliases = {
     # tailscale = "/Applications/Tailscale.app/Contents/MacOS/Tailscale";

@@ -1,0 +1,31 @@
+export AWS_VAULT_PROMPT=ykman
+export YKMAN_OATH_CREDENTIAL_NAME="${YKMAN_OATH_CREDENTIAL_NAME:-sr-aws}"
+
+zmodload zsh/datetime
+
+awslogin() {
+  emulate -L zsh
+  local profile="${1:-$AWS_PROFILE}"
+  if [[ -z "$profile" ]]; then
+    print -u2 "usage: awslogin <profile>"
+    return 1
+  fi
+
+  unset AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY AWS_SESSION_TOKEN AWS_CREDENTIAL_EXPIRATION
+
+  local creds
+  creds=$(aws-vault export --format=env "$profile") || return 1
+
+  local line
+  while IFS= read -r line; do
+    [[ "$line" == *=* ]] || continue
+    export "${line%%=*}=${line#*=}"
+  done <<< "$creds"
+
+  export AWS_PROFILE="$profile"
+  if [[ -n "$AWS_CREDENTIAL_EXPIRATION" ]]; then
+    print -P "%F{green}done%f $profile, expires $AWS_CREDENTIAL_EXPIRATION"
+  else
+    print -P "%F{green}done%f $profile (no expiry)"
+  fi
+}
