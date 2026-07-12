@@ -1,11 +1,11 @@
 
 -- See https://wiki.hypr.land/Configuring/Basics/Monitors/
 
--- left monitor
+-- left monitor (connected w/ DP)
 hl.monitor({
     output   = "desc:Samsung Electric Company LS27B61x H4TW400936",
     mode     = "2560x1440",
-    position = "0x0",
+    position = "0x720",
     scale    = "auto",
     -- reserved space for Mac screen
     reserved_area = {
@@ -19,7 +19,7 @@ hl.monitor({
     output   = "desc:Samsung Electric Company LS27D80xU HCNY500207",
     mode     = "3840x2160",
     position = "2560x0",
-    scale    = "2",
+    scale    = "1",
     reserved_area = 0
 })
 
