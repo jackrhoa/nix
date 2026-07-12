@@ -22,6 +22,11 @@
     nvidiaSettings = true;
   };
 
+  services.ollama = {
+    enable = true;
+    package = pkgs.ollama-cuda;
+  };
+
   services.xserver.xkb = { layout = "us"; variant = ""; };
   services.printing.enable = true;
 
@@ -66,5 +71,6 @@
   };
 
   services.openssh.enable = true;
+  programs.coolercontrol.enable = true;
   system.stateVersion = "26.05";
 }
