@@ -27,6 +27,7 @@
         co = "checkout";
         ci = "commit";
         a = "add";
+        d = "diff";
       };
       gpg.ssh.allowedSignersFile = "${config.home.homeDirectory}/.ssh/allowed_signers";
       push.autosetupremote = true;
