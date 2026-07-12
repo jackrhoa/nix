@@ -11,10 +11,17 @@ vim.api.nvim_create_autocmd('LspAttach', {
   end,
 })
 
+require('gitsigns').setup({
+  current_line_blame = true,
+  current_line_blame_opts = { delay = 300, virt_text_pos = 'eol' },
+})
+
 vim.diagnostic.config({ virtual_text = true })
 vim.o.completeopt = 'noselect,menu,menuone,fuzzy,popup'
 vim.keymap.set('i', '<C-Space>', vim.lsp.completion.get)
 vim.keymap.set('i', '<C-@>', vim.lsp.completion.get)
+-- Open Git blame window
+vim.keymap.set('n', '<leader>gb', require('gitsigns').blame)
 
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
