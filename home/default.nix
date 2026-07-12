@@ -9,5 +9,6 @@
     ./bash.nix
     ./packages.nix
     ./starship.nix
+    ./direnv.nix
   ];
 }
