@@ -5,7 +5,7 @@
 hl.monitor({
     output   = "desc:Samsung Electric Company LS27B61x H4TW400936",
     mode     = "2560x1440",
-    position = "0x720",
+    position = "0x0",
     scale    = "auto",
     -- reserved space for Mac screen
     reserved_area = {
@@ -19,7 +19,7 @@ hl.monitor({
     output   = "desc:Samsung Electric Company LS27D80xU HCNY500207",
     mode     = "3840x2160",
     position = "2560x0",
-    scale    = "1",
+    scale    = "1.5",
     reserved_area = 0
 })
 
