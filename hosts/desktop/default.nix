@@ -43,7 +43,7 @@
     isNormalUser = true;
     description = "Jack";
     shell = pkgs.zsh;
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "openrazer" ];
   };
   
   programs.zsh.enable = true;
@@ -61,6 +61,10 @@
     hyprpolkitagent git claude-code
   ];
 
+  fonts.packages = with pkgs; [
+    nerd-fonts.jetbrains-mono
+  ];
+
   programs.gnupg.agent = {
     enable = true;
     enableSSHSupport = true;
@@ -73,4 +77,6 @@
   services.openssh.enable = true;
   programs.coolercontrol.enable = true;
   system.stateVersion = "26.05";
+
+  hardware.openrazer.enable = true;
 }
