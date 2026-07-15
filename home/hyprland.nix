@@ -1,7 +1,8 @@
 { pkgs, lib, ... }: {
   xdg.configFile."hypr/hyprland.lua".source = ./hypr/hyprland.lua;
   xdg.configFile."hypr/monitors.lua".source = ./hypr/monitors.lua;
-
+  
+  # runs hyprctl after every switch
   home.activation.reloadHyprland = 
     lib.hm.dag.entryAfter [ "writeBoundary" ] ''
       runtime="/run/user/$UID/hypr"
