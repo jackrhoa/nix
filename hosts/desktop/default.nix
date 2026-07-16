@@ -56,7 +56,7 @@
   nixpkgs.hostPlatform = "x86_64-linux";
 
   environment.systemPackages = with pkgs; [
-    kitty waybar wofi mako hyprpaper libnotify
+    kitty waybar wofi hyprpaper libnotify
     neovim wl-clipboard cliphist eww
     hyprpolkitagent git claude-code
   ];
