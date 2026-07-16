@@ -11,7 +11,6 @@
   i18n.defaultLocale = "en_US.UTF-8";
 
   services.xserver.enable = true;
-  services.desktopManager.plasma6.enable = true;
   services.displayManager.sddm.enable = true;
   programs.hyprland.enable = true;
 
