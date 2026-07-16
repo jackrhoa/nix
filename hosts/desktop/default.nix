@@ -11,7 +11,13 @@
   i18n.defaultLocale = "en_US.UTF-8";
 
   services.xserver.enable = true;
-  services.displayManager.sddm.enable = true;
+  services.displayManager.sddm = {
+    enable = true;
+    # Use X11 for greeter
+    wayland.enable = false;
+    theme = "sddm-astronaut-theme";
+    extraPackages = [ pkgs.sddm-astronaut ];
+  };
   programs.hyprland.enable = true;
 
   services.xserver.videoDrivers = [ "nvidia" ];
@@ -58,6 +64,7 @@
     kitty waybar wofi hyprpaper libnotify
     neovim wl-clipboard cliphist eww
     hyprpolkitagent git claude-code
+    sddm-astronaut
   ];
 
   fonts.packages = with pkgs; [

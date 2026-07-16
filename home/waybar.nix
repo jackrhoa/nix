@@ -17,7 +17,7 @@ let
       bat=''${bat%.*}
       case "$name" in
         *Cobra*|*Viper*|*DeathAdder*|*Basilisk*|*Mouse*) icon="󰍽" ;;
-        *BlackWidow*|*Huntsman*|*Keyboard*)              icon="" ;;
+        *BlackWidow*|*Huntsman*|*Keyboard*)              icon="󰌌" ;;
         *)                                               icon="" ;;
       esac
       [ "$chg" = "true" ] && icon="󰄄"
