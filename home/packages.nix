@@ -11,5 +11,6 @@
     pkgs.unstable.claude-code
     pkgs.unstable.ffmpeg
     pkgs.unstable.eza
+    pkgs.unstable.exiftool
   ];
 }
