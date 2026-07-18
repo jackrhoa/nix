@@ -7,6 +7,8 @@
     age-plugin-yubikey
     python312
     jj
+    yubikey-manager
+    yubico-piv-tool
   ] ++ [
     pkgs.unstable.claude-code
     pkgs.unstable.ffmpeg
