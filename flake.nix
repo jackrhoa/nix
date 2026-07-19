@@ -12,9 +12,10 @@
       url = "github:nix-community/home-manager/release-26.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nixpkgs-ollama.url = "github:NixOS/nixpkgs/293d6abedf0478e681a4dfcfcb35b30fc796a32f";
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, nix-darwin, home-manager }:
+  outputs = { self, nixpkgs, nixpkgs-unstable, nixpkgs-ollama, nix-darwin, home-manager }:
     let
       hmConfig = user: hostModule: {
         home-manager.useGlobalPkgs = true;
@@ -32,7 +33,10 @@
               system = prev.stdenv.hostPlatform.system;
               config.allowUnfree = true;
             };
-
+            ollama-pinned = import nixpkgs-ollama {
+              system = prev.stdenv.hostPlatform.system;
+              config.allowUnfree = true;
+            };
           })
         ];
       };

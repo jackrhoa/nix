@@ -29,7 +29,7 @@
 
   services.ollama = {
     enable = true;
-    package = pkgs.ollama-cuda;
+    package = pkgs.ollama-pinned.ollama-cuda;
   };
 
   services.xserver.xkb = { layout = "us"; variant = ""; };
