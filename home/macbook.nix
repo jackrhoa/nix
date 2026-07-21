@@ -28,12 +28,5 @@
     "/etc/profiles/per-user/${config.home.username}/bin"
     "${config.home.homeDirectory}/.local/bin"
   ];
-  # home.sessionPath = {
-  #
-  # };
-  # home.sessionVariables = {
-  #
-  # };
-  #
 
 }
