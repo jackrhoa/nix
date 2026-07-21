@@ -10,6 +10,7 @@
     yubikey-manager
     yubico-piv-tool
     zstd
+    openssh
   ] ++ [
     pkgs.unstable.claude-code
     pkgs.unstable.ffmpeg
