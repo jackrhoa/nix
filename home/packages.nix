@@ -9,6 +9,7 @@
     jj
     yubikey-manager
     yubico-piv-tool
+    zstd
   ] ++ [
     pkgs.unstable.claude-code
     pkgs.unstable.ffmpeg
