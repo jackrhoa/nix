@@ -6,10 +6,10 @@
   programs.zsh.shellAliases = {
     whatismyip = "curl ipinfo.io";
      
-    ls = "eza --icons";
-    ll = "eza -l --icons --git --header";
-    la = "eza -la --icons --git";
-    lt = "eza --tree --level=2 --icons";
+    ls = "eza --icons=auto";
+    ll = "eza -l --icons=auto --git --header";
+    la = "eza -la --icons=auto --git";
+    lt = "eza --tree --level=2 --icons=auto";
     
     g = "git";
   };
