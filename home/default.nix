@@ -10,5 +10,6 @@
     ./packages.nix
     ./starship.nix
     ./direnv.nix
+    ./scripts.nix
   ];
 }
