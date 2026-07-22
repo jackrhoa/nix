@@ -16,6 +16,12 @@ require('gitsigns').setup({
   current_line_blame_opts = { delay = 300, virt_text_pos = 'eol' },
 })
 
+vim.g.preview = { latex = true, markdown = true }
+
+vim.pack.add({
+  "https://git.barrettruth.com/barrettruth/preview.nvim",
+})
+
 vim.diagnostic.config({ virtual_text = true })
 vim.o.completeopt = 'noselect,menu,menuone,fuzzy,popup'
 vim.keymap.set('i', '<C-Space>', vim.lsp.completion.get)
