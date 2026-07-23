@@ -11,6 +11,7 @@
     yubico-piv-tool
     zstd
     openssh
+    sioyek
   ] ++ [
     pkgs.unstable.claude-code
     pkgs.unstable.ffmpeg
