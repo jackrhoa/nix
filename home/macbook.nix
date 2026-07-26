@@ -1,11 +1,9 @@
 { pkgs, config, ... }: {
   imports = [
     ./tmux.nix
+    ./ghostty.nix
   ];
 
-  home.packages = [
-    pkgs.ghostty-bin
-  ];
   programs.zsh = {
     enable = true;
     initContent = builtins.readFile ./zshrc + builtins.readFile ./awslogin;
