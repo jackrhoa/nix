@@ -9,7 +9,7 @@
     ls = "eza --icons=auto";
     ll = "eza -l --icons=auto --git --header";
     la = "eza -la --icons=auto --git";
-    lt = "eza --tree --level=2 --icons=auto";
+    lt = "eza --tree --level=2 --icons=auto --ignore-glob 'node_modules'";
     
     g = "git";
   };
