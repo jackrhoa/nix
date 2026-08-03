@@ -2,6 +2,7 @@
   home.packages = with pkgs; [
     nil
     lua-language-server
+    vtsls
   ];
   
   programs.neovim = {
