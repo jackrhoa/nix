@@ -1,5 +1,4 @@
 export AWS_VAULT_PROMPT=ykman
-export YKMAN_OATH_CREDENTIAL_NAME="${YKMAN_OATH_CREDENTIAL_NAME:-sr-aws}"
 
 zmodload zsh/datetime
 
