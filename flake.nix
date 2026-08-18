@@ -13,9 +13,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixpkgs-ollama.url = "github:NixOS/nixpkgs/293d6abedf0478e681a4dfcfcb35b30fc796a32f";
+    eza-local.url = "github:jackrhoa/eza/main";
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, nixpkgs-ollama, nix-darwin, home-manager }:
+  outputs = { self, nixpkgs, nixpkgs-unstable, nixpkgs-ollama, nix-darwin, home-manager, eza-local }:
     let
       hmConfig = user: hostModule: {
         home-manager.useGlobalPkgs = true;
@@ -41,6 +42,14 @@
         ];
       };
 
+      ezaLocalOverlay = {
+        nixpkgs.overlays = [
+          (final: prev: {
+            eza-local = eza-local.packages.${prev.stdenv.hostPlatform.system}.default;
+          })
+        ];
+      };
+
     in
     {
       darwinConfigurations."M3-MacBook-Pro1" = nix-darwin.lib.darwinSystem {
@@ -49,6 +58,7 @@
           home-manager.darwinModules.home-manager
           (hmConfig "jackrhoa" ./home/macbook.nix)
           unstableOverlay
+          ezaLocalOverlay
         ];
       };
 
