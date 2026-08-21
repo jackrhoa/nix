@@ -12,7 +12,6 @@
     zstd
     openssh
     sioyek
-    swiftbar
     eza-local 
     texlive.pkgs.latexmk
     texlive.combined.scheme-medium

@@ -8,6 +8,9 @@
     enable = true;
     initContent = builtins.readFile ./zshrc + builtins.readFile ./awslogin;
   };
+
+  home.packages = [ pkgs.swiftbar ];
+
   programs.zsh.shellAliases = {
     # tailscale = "/Applications/Tailscale.app/Contents/MacOS/Tailscale";
     vim = "ECHO 'no. use NVIM'";
