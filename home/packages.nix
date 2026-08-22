@@ -5,7 +5,6 @@
     fd
     age
     age-plugin-yubikey
-    python312
     jj
     yubikey-manager
     yubico-piv-tool
