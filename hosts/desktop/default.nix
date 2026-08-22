@@ -19,6 +19,9 @@
     extraPackages = [ pkgs.sddm-astronaut ];
   };
   programs.hyprland.enable = true;
+  
+  programs.uwsm.enable = true;
+  programs.hyprland.withUWSM = true;
 
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.nvidia = {
