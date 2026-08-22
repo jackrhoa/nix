@@ -13,7 +13,6 @@
     };
   };
 
-  # Qt reads none of the above; it needs telling separately.
   qt = {
     enable = true;
     platformTheme.name = "adwaita";
