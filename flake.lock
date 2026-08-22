@@ -320,7 +320,8 @@
         "nix-darwin": "nix-darwin",
         "nixpkgs": "nixpkgs_2",
         "nixpkgs-ollama": "nixpkgs-ollama",
-        "nixpkgs-unstable": "nixpkgs-unstable"
+        "nixpkgs-unstable": "nixpkgs-unstable",
+        "url-shortener": "url-shortener"
       }
     },
     "rust-analyzer-src": {
@@ -394,6 +395,27 @@
       "original": {
         "owner": "numtide",
         "repo": "treefmt-nix",
+        "type": "github"
+      }
+    },
+    "url-shortener": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1787418473,
+        "narHash": "sha256-TOqdG0rTlf2l2SxrjS6FHyIuiGntY5syX3GmB4bIEJE=",
+        "owner": "jackrhoa",
+        "repo": "url-shortener",
+        "rev": "6541c0068046e26824155e82d636b1dd4aceab75",
+        "type": "github"
+      },
+      "original": {
+        "owner": "jackrhoa",
+        "ref": "main",
+        "repo": "url-shortener",
         "type": "github"
       }
     }

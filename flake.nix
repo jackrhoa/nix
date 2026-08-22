@@ -14,9 +14,13 @@
     };
     nixpkgs-ollama.url = "github:NixOS/nixpkgs/293d6abedf0478e681a4dfcfcb35b30fc796a32f";
     eza-local.url = "github:jackrhoa/eza/main";
+    url-shortener = {
+      url = "github:jackrhoa/url-shortener/main";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, nixpkgs-ollama, nix-darwin, home-manager, eza-local }:
+  outputs = { self, nixpkgs, nixpkgs-unstable, nixpkgs-ollama, nix-darwin, home-manager, eza-local, url-shortener }:
     let
       hmConfig = user: hostModule: {
         home-manager.useGlobalPkgs = true;
@@ -50,10 +54,14 @@
         ];
       };
 
-      # Overlays/modules shared by every host so they live in one place.
+      urlShortenerOverlay = {
+        nixpkgs.overlays = [ url-shortener.overlays.default ];
+      };
+
       commonModules = [
         unstableOverlay
         ezaLocalOverlay
+        urlShortenerOverlay
       ];
 
     in

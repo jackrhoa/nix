@@ -13,6 +13,7 @@
     openssh
     sioyek
     eza-local 
+    short
     texlive.pkgs.latexmk
     texlive.combined.scheme-medium
   ] ++ [
