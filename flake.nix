@@ -50,6 +50,12 @@
         ];
       };
 
+      # Overlays/modules shared by every host so they live in one place.
+      commonModules = [
+        unstableOverlay
+        ezaLocalOverlay
+      ];
+
     in
     {
       darwinConfigurations."M3-MacBook-Pro1" = nix-darwin.lib.darwinSystem {
@@ -57,9 +63,7 @@
           ./hosts/macbook
           home-manager.darwinModules.home-manager
           (hmConfig "jackrhoa" ./home/macbook.nix)
-          unstableOverlay
-          ezaLocalOverlay
-        ];
+        ] ++ commonModules;
       };
 
       nixosConfigurations."desktop" = nixpkgs.lib.nixosSystem {
@@ -67,8 +71,7 @@
           ./hosts/desktop
           home-manager.nixosModules.home-manager
           (hmConfig "jack" ./home/desktop.nix)
-          unstableOverlay
-        ];
+        ] ++ commonModules;
       };
     };
 }
