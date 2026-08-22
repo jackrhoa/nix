@@ -1,7 +1,8 @@
 { ... }: {
   imports = [
-    ./hyprland.nix
-    ./waybar.nix
-    ./mako.nix
+    ./desktop/hyprland.nix
+    ./desktop/waybar.nix
+    ./desktop/mako.nix
+    ./desktop/theme.nix
   ];
 }
