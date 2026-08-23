@@ -62,6 +62,7 @@
         unstableOverlay
         ezaLocalOverlay
         urlShortenerOverlay
+        ./modules/tailscale.nix
       ];
 
     in
