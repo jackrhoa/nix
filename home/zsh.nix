@@ -12,6 +12,8 @@
     la = "eza -la --icons=auto --git";
     lt = "eza --tree --level=3 --icons=auto --collapse 'node_modules'";
 
+    cl = "claude";
+
     jackr = "noglob short";
     
     g = "git";
