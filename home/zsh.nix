@@ -13,6 +13,7 @@
     lt = "eza --tree --level=3 --icons=auto --collapse 'node_modules'";
 
     cl = "claude";
+    nv = "nvim";
 
     jackr = "noglob short";
     
