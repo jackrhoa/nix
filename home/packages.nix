@@ -17,6 +17,7 @@
     texlive.combined.scheme-medium
   ] ++ [
     pkgs.unstable.claude-code
+    pkgs.unstable.codex
     pkgs.unstable.ffmpeg
     pkgs.unstable.exiftool
     # pkgs.unstable.chromium
