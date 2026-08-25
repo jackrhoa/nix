@@ -17,7 +17,11 @@ require('gitsigns').setup({
   current_line_blame_opts = { delay = 300, virt_text_pos = 'eol' },
 })
 
-vim.g.preview = { latex = { open = { 'sioyek', '--new-instance' } }, markdown = true }
+vim.g.preview = { 
+  latex = { open = { 'sioyek', '--new-instance' } },
+  markdown = true,
+  typst = { open = { 'sioyek' } },
+}
 
 vim.pack.add({
   "https://git.barrettruth.com/barrettruth/preview.nvim",

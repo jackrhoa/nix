@@ -10,6 +10,7 @@
     yubico-piv-tool
     zstd
     openssh
+    typst
     sioyek
     eza-local 
     short
