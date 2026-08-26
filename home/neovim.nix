@@ -3,6 +3,7 @@
     nil
     lua-language-server
     vtsls
+    tinymist
   ];
   
   programs.neovim = {
