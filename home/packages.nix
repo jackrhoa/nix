@@ -14,6 +14,7 @@
     sioyek
     eza-local 
     short
+    wireshark
     texlive.pkgs.latexmk
     texlive.combined.scheme-medium
   ] ++ [
