@@ -125,6 +125,26 @@
         "type": "github"
       }
     },
+    "hey-cli": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1787936561,
+        "narHash": "sha256-bd96SJWIxf2WjS7SuwqJygOvVPlXbbDjdFSx/L+In+E=",
+        "owner": "basecamp",
+        "repo": "hey-cli",
+        "rev": "a4c59d42a74dec49085d22e590d8b73104e9d5e2",
+        "type": "github"
+      },
+      "original": {
+        "owner": "basecamp",
+        "repo": "hey-cli",
+        "type": "github"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -316,6 +336,7 @@
     "root": {
       "inputs": {
         "eza-local": "eza-local",
+        "hey-cli": "hey-cli",
         "home-manager": "home-manager",
         "nix-darwin": "nix-darwin",
         "nixpkgs": "nixpkgs_2",

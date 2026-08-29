@@ -15,6 +15,7 @@
     eza-local 
     short
     wireshark
+    hey-cli
     gws
     google-cloud-sdk
     texlive.pkgs.latexmk
