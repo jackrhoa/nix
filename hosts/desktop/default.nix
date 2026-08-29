@@ -65,6 +65,8 @@
   programs.nix-ld.enable = true;
   nixpkgs.hostPlatform = "x86_64-linux";
 
+  environment.enableAllTerminfo = true;
+
   environment.systemPackages = with pkgs; [
     kitty waybar wofi hyprpaper libnotify
     neovim wl-clipboard cliphist eww
