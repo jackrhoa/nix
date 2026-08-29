@@ -5,7 +5,6 @@
     ./fzf.nix
     ./neovim.nix
     ./git.nix
-    # ./tmux.nix # desktop has Hyprland
     ./bash.nix
     ./packages.nix
     ./starship.nix
