@@ -51,10 +51,12 @@
     isNormalUser = true;
     description = "Jack";
     shell = pkgs.zsh;
-    extraGroups = [ "networkmanager" "wheel" "openrazer" ];
+    extraGroups = [ "networkmanager" "wheel" "openrazer" "docker" ];
   };
   
   programs.zsh.enable = true;
+
+  virtualisation.docker.enable = true;
 
   programs.firefox.enable = true;
   nixpkgs.config.allowUnfree = true;
