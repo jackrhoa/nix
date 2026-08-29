@@ -15,6 +15,8 @@
     eza-local 
     short
     wireshark
+    gws
+    google-cloud-sdk
     texlive.pkgs.latexmk
     texlive.combined.scheme-medium
   ] ++ [
