@@ -4,6 +4,7 @@
     lua-language-server
     vtsls
     tinymist
+    clang-tools
   ];
   
   programs.neovim = {
