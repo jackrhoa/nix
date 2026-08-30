@@ -5,6 +5,7 @@
     ./fzf.nix
     ./neovim.nix
     ./git.nix
+    ./jujutsu.nix
     ./bash.nix
     ./packages.nix
     ./starship.nix

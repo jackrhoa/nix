@@ -5,7 +5,6 @@
     fd
     age
     age-plugin-yubikey
-    jujutsu
     yubikey-manager
     yubico-piv-tool
     zstd
