@@ -18,6 +18,7 @@
     hey-cli
     gws
     google-cloud-sdk
+    gh
     texlive.pkgs.latexmk
     texlive.combined.scheme-medium
   ] ++ [
