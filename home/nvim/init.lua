@@ -4,6 +4,7 @@ vim.lsp.enable('lua_ls')
 vim.lsp.enable('vtsls')
 vim.lsp.enable('tinymist')
 vim.lsp.enable('clangd');
+vim.lsp.enable('jdtls')
 
 vim.api.nvim_create_autocmd('LspAttach', {
   callback = function(args)

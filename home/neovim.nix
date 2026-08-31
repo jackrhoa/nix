@@ -5,6 +5,7 @@
     vtsls
     tinymist
     clang-tools
+    jdt-language-server
   ];
   
   programs.neovim = {
