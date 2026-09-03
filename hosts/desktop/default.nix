@@ -53,6 +53,18 @@
     shell = pkgs.zsh;
     extraGroups = [ "networkmanager" "wheel" "openrazer" "docker" ];
   };
+
+  users.users.agent = {
+    isNormalUser = true;
+    description = "Agent";
+    shell = pkgs.zsh;
+    packages = with pkgs; [
+      neovim
+      codex
+      claude-code
+      tmux
+    ];
+  };
   
   programs.zsh.enable = true;
 
