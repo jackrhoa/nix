@@ -1,4 +1,5 @@
 {
   "runtime.version": "LuaJIT",
-  "workspace.library": ["/run/current-system/sw/share/nvim/runtime"]
+  "workspace.library": ["/run/current-system/sw/share/nvim/runtime"],
+  "diagnostics.globals": ["vim"]
 }
