@@ -99,7 +99,14 @@
     };
   };
 
-  services.openssh.enable = true;
+  services.openssh = {
+    enable = true;
+    settings = {
+      PubkeyAuthentication = true;
+      PasswordAuthentication = false;
+      KbdInteractiveAuthentication = false;
+    };
+  };
   programs.coolercontrol.enable = true;
   system.stateVersion = "26.05";
 
