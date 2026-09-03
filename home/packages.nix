@@ -18,6 +18,7 @@
     gws
     google-cloud-sdk
     gh
+    dig
     texlive.pkgs.latexmk
     texlive.combined.scheme-medium
   ] ++ [
