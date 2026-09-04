@@ -80,10 +80,20 @@
   environment.enableAllTerminfo = true;
 
   environment.systemPackages = with pkgs; [
-    kitty waybar wofi hyprpaper libnotify
-    neovim wl-clipboard cliphist eww
-    hyprpolkitagent git claude-code
+    kitty
+    waybar
+    wofi
+    hyprpaper
+    libnotify
+    neovim
+    wl-clipboard
+    cliphist 
+    eww
+    hyprpolkitagent
+    git
+    claude-code
     sddm-astronaut
+    hyprlock
   ];
 
   fonts.packages = with pkgs; [
