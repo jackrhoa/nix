@@ -20,15 +20,19 @@ require('gitsigns').setup({
   current_line_blame_opts = { delay = 300, virt_text_pos = 'eol' },
 })
 
-vim.g.preview = { 
-  latex = { open = { 'sioyek', '--new-instance' } },
+vim.pack.add({
+  "https://github.com/barrettruth/preview.nvim",
+})
+
+vim.g.preview = {
+  latex = {
+    open = { 'sioyek', '--new-instance' },
+      cwd = function(ctx) return vim.fs.dirname(ctx.file) end,
+  },
+
   markdown = true,
   typst = { open = { 'sioyek' } },
 }
-
-vim.pack.add({
-  "https://git.barrettruth.com/barrettruth/preview.nvim",
-})
 
 vim.diagnostic.config({ virtual_text = true })
 vim.o.completeopt = 'noselect,menu,menuone,fuzzy,popup'
