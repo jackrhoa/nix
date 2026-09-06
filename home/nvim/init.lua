@@ -6,6 +6,8 @@ vim.lsp.enable('tinymist')
 vim.lsp.enable('clangd');
 vim.lsp.enable('jdtls')
 
+require("oil").setup()
+
 vim.api.nvim_create_autocmd('LspAttach', {
   callback = function(args)
     local client = assert(vim.lsp.get_client_by_id(args.data.client_id))

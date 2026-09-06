@@ -10,7 +10,7 @@
   
   programs.neovim = {
     enable = true;
-    plugins = with pkgs.vimPlugins; [ gitsigns-nvim ];
+    plugins = with pkgs.vimPlugins; [ gitsigns-nvim oil-nvim ];
     initLua = builtins.readFile ./nvim/init.lua;
     defaultEditor = true;
   };
