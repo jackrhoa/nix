@@ -2,6 +2,7 @@
 {
   home.packages = with pkgs; [
     ripgrep
+    maven
     fd
     age
     age-plugin-yubikey
