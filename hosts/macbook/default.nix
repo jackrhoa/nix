@@ -1,5 +1,9 @@
 { pkgs, ... }: {
-  imports = [ ../../modules/chmod-bpf.nix ];
+  imports = [
+    ../../modules/chmod-bpf.nix
+    # Mac apps installed at system level
+    ./homebrew.nix
+  ];
 
   local.chmodBPF.enable = true;
 
@@ -7,6 +11,7 @@
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nixpkgs.hostPlatform = "aarch64-darwin";
   system.stateVersion = 6;
+  system.primaryUser = "jackrhoa";
   users.users.jackrhoa.home = "/Users/jackrhoa";
 
   # Use TouchID for sudo authentication
