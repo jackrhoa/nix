@@ -18,13 +18,9 @@
       url = "github:jackrhoa/url-shortener/main";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    hey-cli = {
-      url = "github:basecamp/hey-cli";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, nixpkgs-ollama, nix-darwin, home-manager, eza-local, url-shortener, hey-cli }:
+  outputs = { self, nixpkgs, nixpkgs-unstable, nixpkgs-ollama, nix-darwin, home-manager, eza-local, url-shortener }:
     let
       hmConfig = user: hostModule: {
         home-manager.useGlobalPkgs = true;
@@ -58,14 +54,6 @@
         ];
       };
 
-      heyCliOverlay = {
-        nixpkgs.overlays = [
-          (final: prev: {
-            hey-cli = hey-cli.packages.${prev.stdenv.hostPlatform.system}.hey;
-          })
-        ];
-      };
-
       urlShortenerOverlay = {
         nixpkgs.overlays = [ url-shortener.overlays.default ];
       };
@@ -74,7 +62,6 @@
         unstableOverlay
         ezaLocalOverlay
         urlShortenerOverlay
-        heyCliOverlay
         ./modules/tailscale.nix
       ];
 
