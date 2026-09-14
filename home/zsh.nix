@@ -7,10 +7,10 @@
   programs.zsh.shellAliases = {
     whatismyip = "curl ipinfo.io";
      
-    ls = "eza --icons=auto";
-    ll = "eza -l --icons=auto --git --header";
-    la = "eza -la --icons=auto --git";
-    lt = "eza --tree --level=3 --icons=auto --collapse 'node_modules'";
+    ls = "eza --icons=auto --group-directories-first";
+    ll = "eza -l --icons=auto --group-directories-first --git --header";
+    la = "eza -la --icons=auto --group-directories-first --git";
+    lt = "eza --tree --level=3 --icons=auto --group-directories-first --collapse 'node_modules'";
 
     cl = "claude";
     nv = "nvim";
