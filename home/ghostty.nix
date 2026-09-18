@@ -6,6 +6,8 @@
       theme = "light:3024 Day,dark:3024 Night";
       macos-icon = "holographic";
 
+      shell-integration-features = "ssh-env,ssh-terminfo";
+
       # new windows open in $HOME
       window-inherit-working-directory = false;
       working-directory = "home";
