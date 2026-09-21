@@ -3,6 +3,7 @@
   home.packages = with pkgs; [
     ripgrep
     maven
+    jupyter
     fd
     age
     age-plugin-yubikey
