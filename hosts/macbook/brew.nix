@@ -15,6 +15,7 @@
     };
 
     casks = [
+      "firefox"
       "netnewswire"
       "maccy" # more reliable than nixpkg
     ];
