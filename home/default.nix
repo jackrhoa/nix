@@ -8,6 +8,7 @@
     ./jujutsu.nix
     ./bash.nix
     ./packages.nix
+    ./writing.nix
     ./starship.nix
     ./direnv.nix
     ./scripts.nix

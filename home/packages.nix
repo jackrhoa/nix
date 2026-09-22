@@ -1,6 +1,7 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
+    nodejs_24
     ripgrep
     maven
     jupyter
@@ -11,8 +12,6 @@
     yubico-piv-tool
     zstd
     openssh
-    typst
-    sioyek
     eza-local 
     short
     wireshark
@@ -20,8 +19,11 @@
     google-cloud-sdk
     gh
     dig
-    texlive.pkgs.latexmk
-    texlive.combined.scheme-medium
+    git-filter-repo
+    aws-vault
+    terraform
+    awscli2
+    ssm-session-manager-plugin # required for awscli2
   ] ++ [
     pkgs.unstable.claude-code
     pkgs.unstable.codex

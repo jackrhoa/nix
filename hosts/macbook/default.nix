@@ -2,7 +2,7 @@
   imports = [
     ../../modules/chmod-bpf.nix
     # Mac apps installed at system level
-    ./homebrew.nix
+    ./brew.nix
   ];
 
   local.chmodBPF.enable = true;
@@ -10,6 +10,8 @@
   # environment.systemPackages = [];
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nixpkgs.hostPlatform = "aarch64-darwin";
+  # Required for terraform
+  nixpkgs.config.allowUnfree = true;
   system.stateVersion = 6;
   system.primaryUser = "jackrhoa";
   users.users.jackrhoa.home = "/Users/jackrhoa";
