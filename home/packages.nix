@@ -21,11 +21,11 @@
     dig
     git-filter-repo
     aws-vault
-    terraform
     awscli2
     ssm-session-manager-plugin # required for awscli2
   ] ++ [
     pkgs.unstable.claude-code
+    pkgs.unstable.terraform
     pkgs.unstable.codex
     pkgs.unstable.ffmpeg
     pkgs.unstable.exiftool
