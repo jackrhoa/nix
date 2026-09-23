@@ -4,7 +4,6 @@
     nodejs_24
     ripgrep
     maven
-    jupyter
     fd
     age
     age-plugin-yubikey
