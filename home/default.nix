@@ -9,6 +9,7 @@
     ./bash.nix
     ./packages.nix
     ./writing.nix
+    ./sioyek.nix
     ./starship.nix
     ./direnv.nix
     ./scripts.nix

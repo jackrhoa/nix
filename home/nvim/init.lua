@@ -26,14 +26,16 @@ vim.pack.add({
   "https://github.com/barrettruth/preview.nvim",
 })
 
+local synctex = require('synctex')
+
 vim.g.preview = {
   latex = {
-    open = { 'sioyek', '--new-instance' },
-      cwd = function(ctx) return vim.fs.dirname(ctx.file) end,
+    open = synctex.open,
+    cwd = function(ctx) return vim.fs.dirname(ctx.file) end,
   },
 
   markdown = true,
-  typst = { open = { 'sioyek' } },
+  typst = { open = synctex.viewer },
 }
 
 vim.diagnostic.config({ virtual_text = true })

@@ -16,5 +16,6 @@
   };
 
   xdg.configFile."nvim/lsp".source = ./nvim/lsp;
+  xdg.configFile."nvim/lua".source = ./nvim/lua;
 
 }
