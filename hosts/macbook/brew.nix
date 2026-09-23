@@ -17,6 +17,7 @@
     casks = [
       "firefox"
       "netnewswire"
+      "signal"
       "maccy" # more reliable than nixpkg
     ];
 
