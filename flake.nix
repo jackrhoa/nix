@@ -13,7 +13,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixpkgs-ollama.url = "github:NixOS/nixpkgs/293d6abedf0478e681a4dfcfcb35b30fc796a32f";
-    eza-local.url = "github:jackrhoa/eza/main";
+    eza-local = {
+      url = "github:jackrhoa/eza/main";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
+    };
+
     url-shortener = {
       url = "github:jackrhoa/url-shortener/main";
       inputs.nixpkgs.follows = "nixpkgs";
