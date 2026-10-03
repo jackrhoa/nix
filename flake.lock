@@ -31,11 +31,11 @@
         "treefmt-nix": "treefmt-nix"
       },
       "locked": {
-        "lastModified": 1786567997,
-        "narHash": "sha256-90uWjNK345ipjb6AhLNTVCalANwBZvHIxf8KrD+hgAw=",
+        "lastModified": 1791080884,
+        "narHash": "sha256-OI/aagcGLZqaDGBYUYjzl5Q1wbojoZ5WweHbF+ZvqVo=",
         "owner": "jackrhoa",
         "repo": "eza",
-        "rev": "ea355380820862783e1515919e5773be4e8d32fa",
+        "rev": "e9ff292110e7d431bddd22b2a9071585c5956d81",
         "type": "github"
       },
       "original": {
@@ -130,7 +130,7 @@
     "home-manager": {
       "inputs": {
         "nixpkgs": [
-          "nixpkgs"
+          "nixpkgs-nixos"
         ]
       },
       "locked": {
@@ -173,7 +173,7 @@
     "nix-darwin": {
       "inputs": {
         "nixpkgs": [
-          "nixpkgs"
+          "nixpkgs-darwin"
         ]
       },
       "locked": {
@@ -191,13 +191,29 @@
         "type": "github"
       }
     },
-    "nixpkgs": {
+    "nixpkgs-darwin": {
       "locked": {
-        "lastModified": 1790750587,
-        "narHash": "sha256-VfjaoJ1Uyb7JZTrBgE5Jf2nhjtQPmD9KOd19HJwmZwM=",
+        "lastModified": 1790772421,
+        "narHash": "sha256-754eQtr0m8xKtNnKYhX7ukI7XaA7oeiQpui1LiEuhyU=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "78e9c786dc08cd4f3420c2395cd977206a9b1da2",
+        "rev": "e49322d1ec25b45f7c587c5fd69ac826d1a57dbc",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixpkgs-26.05-darwin",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs-nixos": {
+      "locked": {
+        "lastModified": 1790920529,
+        "narHash": "sha256-nQyFkMR78WP6PiXKkDW2SjqzLf/spQqjRuxRGSbcV8k=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "774debe7a0d1b496e35677ad955a1011c6ff74f3",
         "type": "github"
       },
       "original": {
@@ -304,7 +320,8 @@
         "eza-local": "eza-local",
         "home-manager": "home-manager",
         "nix-darwin": "nix-darwin",
-        "nixpkgs": "nixpkgs",
+        "nixpkgs-darwin": "nixpkgs-darwin",
+        "nixpkgs-nixos": "nixpkgs-nixos",
         "nixpkgs-ollama": "nixpkgs-ollama",
         "nixpkgs-unstable": "nixpkgs-unstable",
         "url-shortener": "url-shortener"
@@ -387,7 +404,7 @@
     "url-shortener": {
       "inputs": {
         "nixpkgs": [
-          "nixpkgs"
+          "nixpkgs-darwin"
         ]
       },
       "locked": {

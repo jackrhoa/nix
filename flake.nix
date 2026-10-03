@@ -2,15 +2,16 @@
   description = "Jack's nix config";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
+    nixpkgs-nixos.url = "github:NixOS/nixpkgs/nixos-26.05";
+    nixpkgs-darwin.url = "github:NixOS/nixpkgs/nixpkgs-26.05-darwin";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     nix-darwin = {
       url = "github:nix-darwin/nix-darwin/nix-darwin-26.05";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs-darwin";
     };
     home-manager = {
       url = "github:nix-community/home-manager/release-26.05";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs-nixos";
     };
     nixpkgs-ollama.url = "github:NixOS/nixpkgs/293d6abedf0478e681a4dfcfcb35b30fc796a32f";
     eza-local = {
@@ -20,11 +21,11 @@
 
     url-shortener = {
       url = "github:jackrhoa/url-shortener/main";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs-darwin";
     };
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, nixpkgs-ollama, nix-darwin, home-manager, eza-local, url-shortener }:
+  outputs = { self, nixpkgs-nixos, nixpkgs-darwin, nixpkgs-unstable, nixpkgs-ollama, nix-darwin, home-manager, eza-local, url-shortener }:
     let
       hmConfig = user: hostModule: {
         home-manager.useGlobalPkgs = true;
@@ -51,11 +52,7 @@
       };
 
       ezaLocalOverlay = {
-        nixpkgs.overlays = [
-          (final: prev: {
-            eza-local = eza-local.packages.${prev.stdenv.hostPlatform.system}.default;
-          })
-        ];
+        nixpkgs.overlays = [ eza-local.overlays.default ];
       };
 
       urlShortenerOverlay = {
@@ -79,7 +76,7 @@
         ] ++ commonModules;
       };
 
-      nixosConfigurations."desktop" = nixpkgs.lib.nixosSystem {
+      nixosConfigurations."desktop" = nixpkgs-nixos.lib.nixosSystem {
         modules = [
           ./hosts/desktop
           home-manager.nixosModules.home-manager
