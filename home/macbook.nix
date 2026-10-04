@@ -9,7 +9,10 @@
     initContent = builtins.readFile ./zshrc + builtins.readFile ./awslogin;
   };
 
-  home.packages = [ pkgs.swiftbar ];
+  home.packages = [ 
+    pkgs.unstable.swiftbar
+    pkgs.unstable.maccy
+    ];
 
   programs.zsh.shellAliases = {
     # tailscale = "/Applications/Tailscale.app/Contents/MacOS/Tailscale";
