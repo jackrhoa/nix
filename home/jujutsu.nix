@@ -19,6 +19,8 @@
       remotes.origin.auto-track-bookmarks = "*";
       aliases = {
         d = [ "diff" ];
+        init = ["git" "init"];
+        push = [ "git" "push" ];
       };
     };
   };
