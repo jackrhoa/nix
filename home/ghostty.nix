@@ -13,6 +13,8 @@
       working-directory = "home";
       tab-inherit-working-directory = false;
 
+      cursor-click-to-move = false;
+
       # Alternate themes
       # theme = "theme = light:Belafonte Day,dark:Belafonte Night";
       # theme = "HaX0R Gr33n";
