@@ -2,6 +2,7 @@
   imports = [
     ../../modules/chmod-bpf.nix
     ../../modules/maccy.nix
+    ../../modules/scroll-reverser.nix
     # Mac apps installed at system level
     ./brew.nix
   ];
