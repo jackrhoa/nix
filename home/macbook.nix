@@ -11,7 +11,6 @@
 
   home.packages = [ 
     pkgs.unstable.swiftbar
-    pkgs.unstable.maccy
     ];
 
   programs.zsh.shellAliases = {

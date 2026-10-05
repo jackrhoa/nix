@@ -1,6 +1,7 @@
-{ pkgs, ... }: {
+{ ... }: {
   imports = [
     ../../modules/chmod-bpf.nix
+    ../../modules/maccy.nix
     # Mac apps installed at system level
     ./brew.nix
   ];
