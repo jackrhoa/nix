@@ -3,6 +3,7 @@
   home.packages = with pkgs; [
     nodejs_24
     python3
+    pnpm
     ripgrep
     maven
     fd
