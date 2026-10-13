@@ -1,6 +1,7 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
+    colima
     nodejs_24
     python3
     pnpm
