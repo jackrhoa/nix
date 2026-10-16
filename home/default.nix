@@ -10,7 +10,7 @@
     ./packages.nix
     ./writing.nix
     ./sioyek.nix
-    ./starship.nix
+    ./oh-my-posh.nix
     ./direnv.nix
     ./scripts.nix
   ];
