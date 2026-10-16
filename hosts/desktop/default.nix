@@ -81,6 +81,10 @@
   services.pcscd.enable = true;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = with pkgs; [
+    zlib
+    stdenv.cc.cc.lib
+  ];
   nixpkgs.hostPlatform = "x86_64-linux";
 
   environment.enableAllTerminfo = true;
@@ -105,15 +109,6 @@
   fonts.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
   ];
-
-  programs.gnupg.agent = {
-    enable = true;
-    enableSSHSupport = true;
-    settings = {
-      default-cache-ttl-ssh = 43200;
-      max-cache-ttl-ssh = 86400;
-    };
-  };
 
   services.openssh = {
     enable = true;
