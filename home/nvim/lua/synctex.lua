@@ -7,6 +7,19 @@ M.open = vim.list_extend(vim.deepcopy(M.viewer), {
   '--execute-command', 'toggle_synctex',
 })
 
+M.tdf_split = {
+  'osascript',
+  '-e', 'on run argv',
+  '-e', 'tell application "Ghostty"',
+  '-e', 'set t to focused terminal of selected tab of front window',
+  '-e', 'set cfg to new surface configuration',
+  '-e', 'set command of cfg to "' .. vim.fn.exepath('tdf') .. ' " & quoted form of (item 1 of argv)',
+  '-e', 'split t direction right with configuration cfg',
+  '-e', 'focus t',
+  '-e', 'end tell',
+  '-e', 'end run',
+}
+
 pcall(vim.fn.serverstart, '/tmp/nvim-preview.sock')
 
 local synctex_pdf = {}
