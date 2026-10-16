@@ -47,6 +47,12 @@
     pulse.enable = true;
   };
 
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = true;
+  };
+  services.blueman.enable = true;
+
   users.users.jack = {
     isNormalUser = true;
     description = "Jack";
