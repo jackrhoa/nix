@@ -35,7 +35,7 @@ vim.g.preview = {
   },
 
   markdown = true,
-  typst = { open = synctex.viewer },
+  typst = { open = vim.fn.has('mac') == 1 and synctex.tdf_split or synctex.viewer },
 }
 
 vim.diagnostic.config({ virtual_text = true })
