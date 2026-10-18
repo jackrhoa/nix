@@ -58,6 +58,7 @@
     description = "Jack";
     shell = pkgs.zsh;
     extraGroups = [ "networkmanager" "wheel" "openrazer" "docker" ];
+    packages = [ pkgs.unstable.spotify ];
   };
 
   users.users.agent = {
