@@ -13,9 +13,15 @@
       signing = {
         behavior = "own";
         backend = "ssh";
-        key = "${config.home.homeDirectory}/.ssh/git_key";
+        key = "${config.home.homeDirectory}/.ssh/github_signing_key2";
         backends.ssh."allowed-signers" = "${config.home.homeDirectory}/.ssh/allowed_signers";
       };
+      "--scope" = [
+        {
+        "--when".repositories = [ "~/LocalDocuments/gh/thecourseforum/" ];
+        user.email = "jackr@thecourseforum.com";
+        }
+      ];
       remotes.origin.auto-track-bookmarks = "*";
       aliases = {
         d = [ "diff" ];
