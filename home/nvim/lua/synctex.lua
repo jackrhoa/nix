@@ -13,7 +13,7 @@ M.tdf_split = {
   '-e', 'tell application "Ghostty"',
   '-e', 'set t to focused terminal of selected tab of front window',
   '-e', 'set cfg to new surface configuration',
-  '-e', 'set command of cfg to "' .. vim.fn.exepath('tdf') .. ' " & quoted form of (item 1 of argv)',
+  '-e', 'set command of cfg to "' .. '/etc/profiles/per-user/' .. vim.env.USER .. '/bin/tdf' .. ' " & quoted form of (item 1 of argv)',
   '-e', 'split t direction right with configuration cfg',
   '-e', 'focus t',
   '-e', 'end tell',
