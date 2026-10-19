@@ -18,6 +18,7 @@
       "firefox"
       "netnewswire"
       "signal"
+      "tor-browser"
     ];
 
     onActivation = {
