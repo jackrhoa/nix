@@ -22,6 +22,8 @@
     ];
 
     onActivation = {
+      autoUpdate = true;
+      upgrade = true;
       cleanup = "check";
     };
 
