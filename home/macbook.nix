@@ -11,6 +11,7 @@
 
   home.packages = [ 
     pkgs.unstable.swiftbar
+    pkgs.tor
     ];
 
   programs.zsh.shellAliases = {
