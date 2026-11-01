@@ -23,6 +23,8 @@
   programs.uwsm.enable = true;
   programs.hyprland.withUWSM = true;
 
+  services.tailscale.extraSetFlags = [ "--operator=jack" ];
+
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.nvidia = {
     modesetting.enable = true;
