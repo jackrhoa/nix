@@ -11,6 +11,9 @@
 
       set -g set-clipboard on
 
+      set -g extended-keys on
+      set -as terminal-features 'xterm*:extkeys'
+
       # send copied content to mac keyboard
       bind -T copy-mode-vi MouseDragEnd1Pane send -X copy-pipe-and-cancel "pbcopy"
 
