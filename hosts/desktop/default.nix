@@ -110,7 +110,9 @@
     libnotify
     neovim
     wl-clipboard
-    cliphist 
+    grim
+    slurp
+    cliphist
     eww
     hyprpolkitagent
     git
