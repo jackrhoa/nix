@@ -13,6 +13,7 @@
     yubikey-manager
     yubico-piv-tool
     zstd
+    unzip
     openssh
     eza-local 
     short
