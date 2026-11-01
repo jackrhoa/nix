@@ -21,6 +21,8 @@ let
   '';
 in
 {
+  my.signingKeyName = "git_key";
+
   imports = [
     ./desktop/hyprland.nix
     ./desktop/waybar.nix

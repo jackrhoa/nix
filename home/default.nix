@@ -5,6 +5,7 @@
     ./fzf.nix
     ./neovim.nix
     ./git.nix
+    ./signing.nix
     ./jujutsu.nix
     ./bash.nix
     ./packages.nix

@@ -4,7 +4,7 @@
     # Git Large File Storage
     lfs.enable = true;
     signing = {
-      key = "${config.home.homeDirectory}/.ssh/github_signing_key2";
+      key = "${config.home.homeDirectory}/.ssh/${config.my.signingKeyName}";
       format = "ssh";
       signByDefault = true;
     };

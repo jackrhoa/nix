@@ -13,7 +13,7 @@
       signing = {
         behavior = "own";
         backend = "ssh";
-        key = "${config.home.homeDirectory}/.ssh/github_signing_key2";
+        key = "${config.home.homeDirectory}/.ssh/${config.my.signingKeyName}";
         backends.ssh."allowed-signers" = "${config.home.homeDirectory}/.ssh/allowed_signers";
       };
       "--scope" = [

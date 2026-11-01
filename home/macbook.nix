@@ -1,4 +1,6 @@
 { pkgs, config, ... }: {
+  my.signingKeyName = "github_signing_key2";
+
   imports = [
     ./tmux.nix
     ./ghostty.nix
