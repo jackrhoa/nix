@@ -1,7 +1,7 @@
 { pkgs, ... }: {
   programs.ghostty = {
     enable = true;
-    package = pkgs.ghostty-bin;
+    package = pkgs.unstable.ghostty-bin;
     settings = {
       theme = "light:3024 Day,dark:3024 Night";
       macos-icon = "holographic";
