@@ -5,6 +5,7 @@ vim.lsp.enable('vtsls')
 vim.lsp.enable('tinymist')
 vim.lsp.enable('clangd');
 vim.lsp.enable('jdtls')
+vim.lsp.enable('basedpyright')
 
 require("oil").setup()
 

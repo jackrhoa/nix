@@ -6,6 +6,7 @@
     tinymist
     clang-tools
     jdt-language-server
+    basedpyright
   ];
   
   programs.neovim = {
