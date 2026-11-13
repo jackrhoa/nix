@@ -19,6 +19,7 @@
       "netnewswire"
       "signal"
       "tor-browser"
+      "spotify"
     ];
 
     onActivation = {
