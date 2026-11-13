@@ -1,4 +1,4 @@
-{ ... }: {
+{ lib, ... }: {
   imports = [
     ../../modules/chmod-bpf.nix
     ../../modules/maccy.nix
@@ -8,6 +8,14 @@
   ];
 
   local.chmodBPF.enable = true;
+
+  nix.linux-builder = {
+    enable = true;
+    config.virtualisation = {
+      cores = lib.mkForce 4;
+      memorySize = lib.mkForce 8192;
+    };
+  };
 
   # environment.systemPackages = [];
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
