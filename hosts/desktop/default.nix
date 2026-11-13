@@ -72,7 +72,17 @@
       tmux
     ];
   };
-  
+
+  users.users.nixbuilder = {
+    isSystemUser = true;
+    description = "Nix remote builder";
+    group = "nixbuilder";
+    shell = pkgs.bashInteractive;
+    openssh.authorizedKeys.keys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIC6mrKCp5ohetJke0+iXWzpFOANMtpdfLK068ktlCGW3" ];
+  };
+  users.groups.nixbuilder = { };
+  nix.settings.trusted-users = [ "nixbuilder" ];
+
   programs.zsh.enable = true;
 
   virtualisation.docker.enable = true;
@@ -118,6 +128,15 @@
       PasswordAuthentication = false;
       KbdInteractiveAuthentication = false;
     };
+    extraConfig = ''
+      Match User nixbuilder
+        AllowAgentForwarding no
+        AllowTcpForwarding no
+        PermitTTY no
+        PermitTunnel no
+        X11Forwarding no
+        ForceCommand ${config.nix.package}/bin/nix-daemon --stdio
+    '';
   };
   programs.coolercontrol.enable = true;
   system.stateVersion = "26.05";
