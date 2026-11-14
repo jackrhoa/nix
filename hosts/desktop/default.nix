@@ -1,5 +1,8 @@
 { config, pkgs, ... }: {
-  imports = [ ./hardware-configuration.nix ];
+  imports = [
+  ./hardware-configuration.nix
+  ./remote-builder.nix
+  ];
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -74,16 +77,6 @@
       tmux
     ];
   };
-
-  users.users.nixbuilder = {
-    isSystemUser = true;
-    description = "Nix remote builder";
-    group = "nixbuilder";
-    useDefaultShell = true;
-    openssh.authorizedKeys.keyFiles = [ ./remotebuild.pub ];
-  };
-  users.groups.nixbuilder = { };
-  nix.settings.trusted-users = [ "nixbuilder" ];
 
   programs.zsh.enable = true;
 

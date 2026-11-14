@@ -17,9 +17,9 @@
     };
   };
 
-  nix.buildMachines = {
-    
-  }
+  # nix.buildMachines = {
+  #
+  # }
 
   # environment.systemPackages = [];
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
