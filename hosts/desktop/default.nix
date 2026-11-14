@@ -125,15 +125,6 @@
       PasswordAuthentication = false;
       KbdInteractiveAuthentication = false;
     };
-    extraConfig = ''
-      Match User nixbuilder
-        AllowAgentForwarding no
-        AllowTcpForwarding no
-        PermitTTY no
-        PermitTunnel no
-        X11Forwarding no
-        ForceCommand ${config.nix.package}/bin/nix-daemon --stdio
-    '';
   };
   programs.coolercontrol.enable = true;
   system.stateVersion = "26.05";
