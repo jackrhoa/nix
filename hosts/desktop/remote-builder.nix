@@ -1,4 +1,4 @@
-{
+{ config, ... }: {
   users.users.remotebuild = {
     isSystemUser = true;
     description = "Nix remote builder";
@@ -10,5 +10,17 @@
   users.groups.remotebuild = { };
 
   nix.settings.trusted-users = [ "remotebuild" ];
+
+  services.openssh = {
+    extraConfig = ''
+      Match User remotebuild
+        AllowAgentForwarding no
+        AllowTcpForwarding no
+        PermitTTY no
+        PermitTunnel no
+        X11Forwarding no
+        ForceCommand ${config.nix.package}/bin/nix-daemon --stdio
+    '';
+  };
 }
 
