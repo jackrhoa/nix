@@ -79,8 +79,8 @@
     isSystemUser = true;
     description = "Nix remote builder";
     group = "nixbuilder";
-    shell = pkgs.bashInteractive;
-    openssh.authorizedKeys.keys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIC6mrKCp5ohetJke0+iXWzpFOANMtpdfLK068ktlCGW3" ];
+    useDefaultShell = true;
+    openssh.authorizedKeys.keyFiles = [ ./remotebuild.pub ];
   };
   users.groups.nixbuilder = { };
   nix.settings.trusted-users = [ "nixbuilder" ];
