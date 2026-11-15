@@ -3,6 +3,7 @@
     ../../modules/chmod-bpf.nix
     ../../modules/maccy.nix
     ../../modules/scroll-reverser.nix
+    ./distributed-builds.nix
     # Mac apps installed at system level
     ./brew.nix
   ];
