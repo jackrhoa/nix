@@ -25,7 +25,13 @@
           "trailing_diamond": "",
           "foreground": "p:black",
           "background": "p:yellow",
-          "template": " {{ if .SSHSession }} {{ end }}{{ .UserName }} "
+          "background_templates": [
+            "{{ if .SSHSession }}p:red{{ end }}"
+          ],
+          "foreground_templates": [
+            "{{ if .SSHSession }}p:white{{ end }}"
+          ],
+          "template": " {{ if .SSHSession }} {{ .HostName }}  {{ end }}{{ .UserName }} "
         },
         {
           "type": "path",
