@@ -2,6 +2,9 @@
 {
   home.packages = with pkgs; [
     colima
+    docker
+    docker-compose
+    docker-buildx
     nodejs_24
     python3
     pnpm
