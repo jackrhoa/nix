@@ -8,7 +8,7 @@
 
   programs.zsh = {
     enable = true;
-    initContent = builtins.readFile ./zshrc + builtins.readFile ./awslogin;
+    initContent = builtins.readFile ./zshrc;
   };
 
   home.packages = [ 

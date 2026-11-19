@@ -23,7 +23,6 @@
     gh
     dig
     git-filter-repo
-    aws-vault
     awscli2
     ssm-session-manager-plugin # required for awscli2
   ] ++ [
