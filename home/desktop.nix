@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 let
   taildropReceive = pkgs.writeShellScript "taildrop-receive" ''
     dir="$HOME/Downloads/taildrop"
@@ -22,6 +22,8 @@ let
 in
 {
   my.signingKeyName = "git_key";
+
+  home.sessionPath = [ "${config.home.homeDirectory}/.local/bin" ];
 
   imports = [
     ./desktop/hyprland.nix
