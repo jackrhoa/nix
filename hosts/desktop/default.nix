@@ -109,7 +109,6 @@
     eww
     hyprpolkitagent
     git
-    claude-code
     sddm-astronaut
     hyprlock
   ];

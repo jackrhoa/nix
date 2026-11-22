@@ -14,5 +14,6 @@
     ./oh-my-posh.nix
     ./direnv.nix
     ./scripts.nix
+    ./claude.nix
   ];
 }

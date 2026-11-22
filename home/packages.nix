@@ -29,7 +29,6 @@
     awscli2
     ssm-session-manager-plugin # required for awscli2
   ] ++ [
-    pkgs.unstable.claude-code
     pkgs.unstable.vscode
     pkgs.unstable.terraform
     pkgs.unstable.codex
