@@ -11,7 +11,7 @@
   local.chmodBPF.enable = true;
 
   nix.linux-builder = {
-    enable = true;
+    enable = false;
     config.virtualisation = {
       cores = lib.mkForce 4;
       memorySize = lib.mkForce 8192;
