@@ -1,17 +1,10 @@
-{ pkgs, ... }:
-let
-  scroll-reverser = pkgs.unstable.scroll-reverser.overrideAttrs (old: {
-    postInstall = (old.postInstall or "") + ''
-      find "$out" -name '._*' -delete
-    '';
-  });
-in {
+{ pkgs, ... }: {
 
-  environment.systemPackages = [ scroll-reverser ];
+  environment.systemPackages = [ pkgs.unstable.scroll-reverser ];
 
   launchd.user.agents.scroll-reverser.serviceConfig = {
     ProgramArguments = [
-      "${scroll-reverser}/Applications/Scroll Reverser.app/Contents/MacOS/Scroll Reverser"
+      "${pkgs.unstable.scroll-reverser}/Applications/Scroll Reverser.app/Contents/MacOS/Scroll Reverser"
     ];
     RunAtLoad = true;
     ProcessType = "Interactive";
