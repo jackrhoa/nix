@@ -59,7 +59,15 @@
         nixpkgs.overlays = [ url-shortener.overlays.default ];
       };
 
+      unstableRegistry = {
+        nix.registry.nixpkgs.to = {
+          type = "path";
+          path = nixpkgs-unstable.outPath;
+        };
+      };
+
       commonModules = [
+        unstableRegistry
         unstableOverlay
         ezaLocalOverlay
         urlShortenerOverlay
