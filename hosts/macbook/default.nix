@@ -1,4 +1,4 @@
-{ lib, ... }: {
+{ ... }: {
   imports = [
     ../../modules/chmod-bpf.nix
     ../../modules/maccy.nix
@@ -10,20 +10,9 @@
 
   local.chmodBPF.enable = true;
 
-  nix.linux-builder = {
-    enable = false;
-    config.virtualisation = {
-      cores = lib.mkForce 4;
-      memorySize = lib.mkForce 8192;
-    };
-  };
-
-  # nix.buildMachines = {
-  #
-  # }
+  determinateNix.determinateNixd.builder.state = "enabled";
 
   # environment.systemPackages = [];
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nixpkgs.hostPlatform = "aarch64-darwin";
   system.stateVersion = 6;
   system.primaryUser = "jackrhoa";

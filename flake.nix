@@ -2,6 +2,7 @@
   description = "Jack's nix config";
 
   inputs = {
+    determinate.url = "https://flakehub.com/f/DeterminateSystems/determinate/3";
     nixpkgs-nixos.url = "github:NixOS/nixpkgs/nixos-26.05";
     nixpkgs-darwin.url = "github:NixOS/nixpkgs/nixpkgs-26.05-darwin";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
@@ -25,7 +26,7 @@
     };
   };
 
-  outputs = { self, nixpkgs-nixos, nixpkgs-darwin, nixpkgs-unstable, nixpkgs-ollama, nix-darwin, home-manager, eza-local, url-shortener }:
+  outputs = { self, determinate, nixpkgs-nixos, nixpkgs-darwin, nixpkgs-unstable, nixpkgs-ollama, nix-darwin, home-manager, eza-local, url-shortener }:
     let
       hmConfig = user: hostModule: {
         home-manager.useGlobalPkgs = true;
@@ -59,15 +60,7 @@
         nixpkgs.overlays = [ url-shortener.overlays.default ];
       };
 
-      unstableRegistry = {
-        nix.registry.nixpkgs.to = {
-          type = "path";
-          path = nixpkgs-unstable.outPath;
-        };
-      };
-
       commonModules = [
-        unstableRegistry
         unstableOverlay
         ezaLocalOverlay
         urlShortenerOverlay
@@ -79,6 +72,7 @@
       darwinConfigurations."M3-MacBook-Pro1" = nix-darwin.lib.darwinSystem {
         modules = [
           ./hosts/macbook
+          determinate.darwinModules.default
           home-manager.darwinModules.home-manager
           (hmConfig "jackrhoa" ./home/macbook.nix)
         ] ++ commonModules;

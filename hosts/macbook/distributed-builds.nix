@@ -1,8 +1,8 @@
 { config, lib, ... }: {
-  nix.distributedBuilds = true;
-  nix.settings.builders-use-substitutes = true;
+  determinateNix.distributedBuilds = true;
+  determinateNix.customSettings.builders-use-substitutes = true;
 
-  nix.buildMachines = [
+  determinateNix.buildMachines = [
     {
       hostName = "nixos-desktop";
       publicHostKey = lib.fileContents ../desktop/publicHostKey;
