@@ -10,7 +10,10 @@
 
   local.chmodBPF.enable = true;
 
-  determinateNix.determinateNixd.builder.state = "enabled";
+  determinateNix.determinateNixd = {
+    builder.state = "enabled";
+    telemetry.sentry.endpoint = null;
+  };
 
   # environment.systemPackages = [];
   nixpkgs.hostPlatform = "aarch64-darwin";
